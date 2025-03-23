@@ -1,8 +1,7 @@
 # $\mu$-distance
-[https://doi.org/10.1109/TCBB.2007.70270]
-
+Originally from https://doi.org/10.1109/TCBB.2007.70270
 # Nakhleh distance
-[https://doi.org/10.1109/TCBB.2009.2]
+Originally from https://doi.org/10.1109/TCBB.2009.2
 
 # Path-lengths distance
 There has been a lot of work in nodal distances for phylogenetic trees,
