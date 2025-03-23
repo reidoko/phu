@@ -157,7 +157,7 @@ int main_compare(int argc, char *argv[], po::variables_map &global_vm) {
 }
 
 int main_reticulate(int argc, char *argv[], po::variables_map &global_vm) {
-    po::options_description ret_opts("Classification options");
+    po::options_description ret_opts("Reticulation options");
     ret_opts.add_options()
         ("newick,n", po::value<std::vector<std::string>>()->multitoken(), "Trees/networks to add reticulations to in extended newick format")
         ("number,r", po::value<unsigned int>(), "Number of reticulations to add")
