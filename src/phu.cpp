@@ -114,7 +114,7 @@ int main_compare(int argc, char *argv[], po::variables_map &global_vm) {
                 dist_fn = [](const RootedNetwork& a, const RootedNetwork& b) { return (double)path_length_distance(a,b) / 2.0; };
                 dist_names.push_back("Path length distance");
             } else if (measure == "pm" || measure == "mu") {
-                dist_fn = [](const RootedNetwork& a, const RootedNetwork& b) { return (double)path_multiplicity_distance(a,b); };
+                dist_fn = [](const RootedNetwork& a, const RootedNetwork& b) { return (double)path_multiplicity_distance(a,b) / 2.0; };
                 dist_names.push_back("mu-distance"); // μ
             } else {
                 std::println("\nMeasure \"{}\" not recognized.", measure);
