@@ -108,10 +108,10 @@ int main_compare(int argc, char *argv[], po::variables_map &global_vm) {
                 dist_fn = &(normalized_robinson_foulds);
                 dist_names.push_back("Normalized Robinson-Foulds");
             } else if (measure == "nakhleh") {
-                dist_fn = [](const RootedNetwork& a, const RootedNetwork& b) { return (double)nakhleh_distance(a,b); };
+                dist_fn = [](const RootedNetwork& a, const RootedNetwork& b) { return (double)nakhleh_distance(a,b) / 2.0; };
                 dist_names.push_back("Nakhleh distance");
             } else if (measure == "pl") {
-                dist_fn = [](const RootedNetwork& a, const RootedNetwork& b) { return (double)path_length_distance(a,b); };
+                dist_fn = [](const RootedNetwork& a, const RootedNetwork& b) { return (double)path_length_distance(a,b) / 2.0; };
                 dist_names.push_back("Path length distance");
             } else if (measure == "pm" || measure == "mu") {
                 dist_fn = [](const RootedNetwork& a, const RootedNetwork& b) { return (double)path_multiplicity_distance(a,b); };
@@ -123,10 +123,9 @@ int main_compare(int argc, char *argv[], po::variables_map &global_vm) {
             dist_fns.push_back(dist_fn);
         }
     } else {
-        std::print("nakhleh");
+        dist_names.push_back("Nakhleh distance");
         dist_fns.push_back([](const RootedNetwork& a, const RootedNetwork& b) { return (double)nakhleh_distance(a,b) / 2.0; });
     }
-    std::println();
 
     if (nets.size() == 2) {
         for (size_t ix = 0; ix < dist_fns.size(); ++ix) {
