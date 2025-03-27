@@ -9,6 +9,7 @@
 #include <boost/program_options.hpp>
 
 #include "RootedNetwork.hpp"
+#include "Comparisons.hpp"
 
 namespace po = boost::program_options;
 

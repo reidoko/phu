@@ -1,3 +1,5 @@
+#pragma once
+
 #include <string>
 #include <vector>
 #include <unordered_map>
@@ -72,13 +74,4 @@ class RootedNetwork {
 
 RootedNetwork parse_network(std::string);
 std::string to_newick(const RootedNetwork&, const int format=0, const int precision=4);
-
-// distance measures
-// trees
-unsigned int robinson_foulds(const RootedNetwork&, const RootedNetwork&);
-double normalized_robinson_foulds(const RootedNetwork&, const RootedNetwork&);
-
-// networks
-unsigned int nakhleh_distance(const RootedNetwork&, const RootedNetwork&);
-unsigned int path_multiplicity_distance(const RootedNetwork&, const RootedNetwork&);
-unsigned int path_length_distance(const RootedNetwork&, const RootedNetwork&);
+std::vector<std::vector<Node*>> transposed_kahn_ordering(const RootedNetwork&);
